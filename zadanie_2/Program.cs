@@ -39,6 +39,7 @@ Console.WriteLine();
 int[,] matrix2 = new int[matrix.GetLength(0)-1, matrix.GetLength(1)-1];
 int i2 = 0;
 int j2 = 0;
+Console.WriteLine("Убираем из матрицы строку и столбец, на пересечении которых находится минимальное число:");
 for(int i=0; i< matrix.GetLength(0)-1; i++)
 {
     if(i>=mini) i2 = i+1;
@@ -48,15 +49,17 @@ for(int i=0; i< matrix.GetLength(0)-1; i++)
         if(j>=minj) j2 = j+1;
         else j2 = j;
         matrix2[i, j] = matrix[i2, j2];
-    }    
-}    
-Console.WriteLine("Убираем из матрицы строку и столбец, на пересечении которых находится минимальное число:");
-void PrintArray (int[,] matrix2)
-{
-    for(int i=0; i< matrix.GetLength(0)-1; i++)
-    {
-        for(int j=0; j< matrix.GetLength(1)-1; j++) Console.Write($"{matrix2[i, j]} ");
-        Console.WriteLine();
+        Console.Write($"{matrix2[i, j]} ");
     }
-}
-PrintArray(matrix2);
+Console.WriteLine();        
+}    
+//Console.WriteLine("Убираем из матрицы строку и столбец, на пересечении которых находится минимальное число:");
+//void PrintArray (int[,] matrix2)
+//{
+    //for(int i=0; i< matrix.GetLength(0)-1; i++)
+    //{
+        //for(int j=0; j< matrix.GetLength(1)-1; j++) Console.Write($"{matrix2[i, j]} ");
+        //Console.WriteLine();
+    //}
+//}
+//PrintArray(matrix2);

@@ -36,14 +36,14 @@ for(int i=0; i<matrix.GetLength(0); i++)
 Console.WriteLine($"Минимальное число матрицы:({mini+1}, {minj+1}) = {min}");
 Console.WriteLine(); 
 
-int[,] matrix2 = new int[a-1, b-1];
+int[,] matrix2 = new int[matrix.GetLength(0)-1, matrix.GetLength(1)-1];
 int i2 = 0;
 int j2 = 0;
-for(int i=0; i< a-1; i++)
+for(int i=0; i< matrix.GetLength(0)-1; i++)
 {
     if(i>=mini) i2 = i+1;
     else i2 = i;
-    for(int j=0; j< b-1; j++)
+    for(int j=0; j< matrix.GetLength(1)-1; j++)
     {
         if(j>=minj) j2 = j+1;
         else j2 = j;
@@ -53,9 +53,9 @@ for(int i=0; i< a-1; i++)
 Console.WriteLine("Убираем из матрицы строку и столбец, на пересечении которых находится минимальное число:");
 void PrintArray (int[,] matrix2)
 {
-    for(int i=0; i< a-1; i++)
+    for(int i=0; i< matrix.GetLength(0)-1; i++)
     {
-        for(int j=0; j< b-1; j++) Console.Write($"{matrix2[i, j]} ");
+        for(int j=0; j< matrix.GetLength(1)-1; j++) Console.Write($"{matrix2[i, j]} ");
         Console.WriteLine();
     }
 }
